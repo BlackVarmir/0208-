@@ -27,21 +27,21 @@ namespace WinFormsApp1
             else
             {
                 size_сув = Int32.Parse(textBox2.Text);
-                for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int j = 0; j < abc.Length; j++)
                 {
-                    for (int j = 0; j < abc.Length; j++)
+                    if (text[i] == abc[j])
                     {
-                        if (text[i] == abc[j])
-                        {
                             char x = abc[j + size_сув];
-                            text1 = text1.Insert(i, x.ToString());
-                            break;
-                        }
+                        text1 = text1.Insert(i, x.ToString());
+                        break;
                     }
                 }
-                label1.Text = text1;
             }
-            
+            label1.Text = text1;
+        }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -62,21 +62,21 @@ namespace WinFormsApp1
             else
             {
                 size_сув = Int32.Parse(textBox2.Text);
-                for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int j = size; j >= 0; j--)
                 {
-                    for (int j = size; j >= 0; j--)
+                    if (text[i] == abc[j])
                     {
-                        if (text[i] == abc[j])
-                        {
                             char x = abc[j - size_сув];
-                            text1 = text1.Insert(i, x.ToString());
-                            break;
-                        }
-                        continue;
+                        text1 = text1.Insert(i, x.ToString());
+                        break;
                     }
+                    continue;
                 }
-                label1.Text = text1;
             }
+            label1.Text = text1;
+        }
             
         }
     }
